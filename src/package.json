@@ -1,0 +1,63 @@
+{
+    "name": "nativescript-rater",
+    "version": "1.0.0",
+    "description": "Reminds your app's users to review the app through PlayStore or AppStore. Love it, rate it!",
+    "main": "rater",
+    "typings": "index.d.ts",
+    "nativescript": {
+        "platforms": {
+            "android": "5.0.0",
+            "ios": "5.0.0"
+        }
+    },
+    "scripts": {
+        "tsc": "tsc",
+        "build": "npm run tsc && npm run build.native",
+        "build.native": "node scripts/build-native.js",
+        "postclone": "npm i && node scripts/postclone.js && cd ../demo && npm i && npx rimraf -- package-lock.json && cd ../src",
+        "test.android": "npm run tsc && npm run tslint && cd ../demo && tns build android && tns test android --justlaunch",
+        "test.ios": "npm run tsc && npm run tslint && cd ../demo && tns build ios && tns test ios --justlaunch",
+        "tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\"",
+        "plugin.tscwatch": "npm run tsc -- -w",
+        "demo.ios": "npm run tsc && cd ../demo && tns run ios --syncAllFiles --emulator",
+        "demo.android": "npm run tsc && cd ../demo && tns run android --syncAllFiles --emulator",
+        "demo.reset": "cd ../demo && npx rimraf -- hooks node_modules platforms package-lock.json",
+        "plugin.prepare": "npm run build && cd ../demo && tns plugin remove nativescript-rater && tns plugin add ../src",
+        "clean": "npm run demo.reset && npx rimraf -- node_modules package-lock.json && npm i",
+        "ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**'",
+        "prepack": "npm run build.native"
+    },
+    "keywords": [
+        "NativeScript",
+        "JavaScript",
+        "Android",
+        "iOS"
+    ],
+    "author": {
+        "name": "Gogoout",
+        "email": "gogoout@gmail.com"
+    },
+    "bugs": {
+        "url": "https://github.com/gogoout/nativescript-rater/issues"
+    },
+    "license": "MIT",
+    "homepage": "https://github.com/gogoout/nativescript-rater",
+    "readmeFilename": "README.md",
+    "devDependencies": {
+        "cz-conventional-changelog": "^2.1.0",
+        "prompt": "^1.0.0",
+        "rimraf": "^2.6.2",
+        "semver": "^5.6.0",
+        "tns-core-modules": "^5.0.1",
+        "tns-platform-declarations": "^5.0.0",
+        "tslint": "^5.11.0",
+        "typescript": "~2.8.2"
+    },
+    "dependencies": {},
+    "bootstrapper": "nativescript-plugin-seed",
+    "config": {
+        "commitizen": {
+            "path": "./src/node_modules/cz-conventional-changelog"
+        }
+    }
+}

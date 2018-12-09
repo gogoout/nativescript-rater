@@ -32,7 +32,7 @@ Android |   iOS
 
 ## Installation
 
-```javascript
+```cli
 tns plugin add nativescript-rater
 ```
 
@@ -43,18 +43,18 @@ tns plugin add nativescript-rater
 
 ### Typescript
 
-	```typescript
-	import {appRater} from 'nativescript-rater';
-	
-    appRater
-            .setDaysUntilPrompt(7)
-            .setUsesUntilPrompt(3)
-            .setSignificantUsesUntilPrompt(2)
-            .setShowLaterButton(true)
-            .setShowNeverButton(true)
-            .setDebugMode(true)
-            .appLaunched();
-    ```)
+```typescript
+import {appRater} from 'nativescript-rater';
+
+appRater
+        .setDaysUntilPrompt(7)
+        .setUsesUntilPrompt(3)
+        .setSignificantUsesUntilPrompt(2)
+        .setShowLaterButton(true)
+        .setShowNeverButton(true)
+        .setDebugMode(true)
+        .appLaunched();
+```
 
 ## API
     

@@ -9,16 +9,6 @@ export function pageLoaded(args: observable.EventData) {
     let page = <pages.Page>args.object;
     page.bindingContext = new HelloWorldModel();
 
-    appRater
-        .setDaysUntilPrompt(1)
-        .setUsesUntilPrompt(1)
-        .setSignificantUsesUntilPrompt(1)
-        .setShowLaterButton(true)
-        .setShowNeverButton(false)
-        // show every time when called `showRateDialogIfMeetsConditions`
-        .setDebugMode(false)
-        .appLaunched();
-
 }
 
 export function onCheck() {

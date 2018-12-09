@@ -92,7 +92,6 @@ If you want to use your own dialog labels, override string xml resources on your
 You can customize text in review request dialog for iOS10.2 or before devices. Set text in following properties.
 
 ```typescript
-appRater.ios.
 appRater.ios.setAlertTitle('title')
 appRater.ios.setAlertMessage('message')
 appRater.ios.setAlertCancelTitle('cancel')

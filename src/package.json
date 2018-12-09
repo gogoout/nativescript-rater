@@ -1,6 +1,6 @@
 {
     "name": "nativescript-rater",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Reminds your app's users to review the app through PlayStore or AppStore. Love it, rate it!",
     "main": "rater",
     "typings": "index.d.ts",

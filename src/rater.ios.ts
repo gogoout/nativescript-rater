@@ -48,6 +48,10 @@ export const appRater: AppRaterBase = {
         SwiftRater.checkWithHost(this.currentViewController);
     },
 
+    showRateDialog() {
+        SwiftRater.rateApp();
+    },
+
     setShowLaterButton(value: boolean): AppRaterBase {
         SwiftRater.setShowLaterButton(value);
         return appRater;

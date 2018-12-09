@@ -22,4 +22,6 @@ export interface AppRaterBase {
     appLaunched();
 
     showRateDialogIfMeetsConditions();
+
+    showRateDialog();
 }

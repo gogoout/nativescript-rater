@@ -54,6 +54,12 @@ appRater
         .setShowNeverButton(true)
         .setDebugMode(true)
         .appLaunched();
+
+// check
+appRater.showRateDialogIfMeetsConditions();
+
+// show directly
+appRater.showRateDialog();
 ```
 
 ## API
@@ -72,6 +78,7 @@ appRater
 | setShowNeverButton(value: boolean): AppRaterBase | true | Show Never button in review request dialong. **Android only**  |
 | appLaunched():void |  | Let rater know that your app is launched  |
 | showRateDialogIfMeetsConditions():void |  | Show rating dialog if meets conditions |
+| showRateDialog():void |  | Show rating dialog|
 
 ## Custom dialog
 

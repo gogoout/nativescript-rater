@@ -77,6 +77,14 @@ export const appRater: AppRaterBase = {
 
     showRateDialogIfMeetsConditions() {
         getAppRater().then(rater => {
+            if (rater.isDebug() || rater.shouldShowRateDialog()) {
+                rater.showRateDialog(application.android.currentContext);
+            }
+        });
+    },
+
+    showRateDialog() {
+        getAppRater().then(rater => {
             rater.showRateDialog(application.android.currentContext);
         });
     },

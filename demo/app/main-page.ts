@@ -10,18 +10,22 @@ export function pageLoaded(args: observable.EventData) {
     page.bindingContext = new HelloWorldModel();
 
     appRater
-        .setDaysUntilPrompt(7)
-        .setUsesUntilPrompt(3)
-        .setSignificantUsesUntilPrompt(2)
+        .setDaysUntilPrompt(1)
+        .setUsesUntilPrompt(1)
+        .setSignificantUsesUntilPrompt(1)
         .setShowLaterButton(true)
-        .setShowNeverButton(true)
+        .setShowNeverButton(false)
         // show every time when called `showRateDialogIfMeetsConditions`
-        .setDebugMode(true)
+        .setDebugMode(false)
         .appLaunched();
 
 }
 
-export function onTap() {
+export function onCheck() {
     appRater.showRateDialogIfMeetsConditions();
+}
+
+export function onShow() {
+    appRater.showRateDialog();
 }
 

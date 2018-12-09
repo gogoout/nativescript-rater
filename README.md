@@ -36,6 +36,9 @@ Android |   iOS
 tns plugin add nativescript-rater
 ```
 
+## Changelog
+[src/CHANGELOG.md](./src/CHANGELOG.md)
+
 ## Usage 
 
 ### Typescript

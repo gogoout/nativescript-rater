@@ -7,16 +7,16 @@
 Reminds your app's users to review the app through PlayStore or AppStore. Love it, rate it! 
 
 ## iOS 10.3 〜
-![SwiftRater1](./Resource/ios1.gif)
+![SwiftRater1](https://raw.githubusercontent.com/gogoout/nativescript-rater/master/Resource/ios1.gif)
 
 For iOS 10.3 devices, SwiftRater uses SKStoreReviewController.
 
 ## 〜 iOS 10.2
-![SwiftRater2](./Resource/ios2.gif)
+![SwiftRater2](https://raw.githubusercontent.com/gogoout/nativescript-rater/master/Resource/ios2.gif)
 
 ## Android
 
-![Android-Rate](./Resource/android.png)
+![Android-Rate](https://raw.githubusercontent.com/gogoout/nativescript-rater/master/Resource/android.png)
 
 ## Platform controls used:
 Android |   iOS

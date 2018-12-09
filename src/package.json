@@ -31,8 +31,14 @@
     "keywords": [
         "NativeScript",
         "JavaScript",
+        "Typescript",
+        "Angular",
         "Android",
-        "iOS"
+        "iOS",
+        "rate",
+        "rating",
+        "rater",
+        "app"
     ],
     "author": {
         "name": "Gogoout",

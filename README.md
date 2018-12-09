@@ -64,10 +64,10 @@ tns plugin add nativescript-rater
 | android |  | a promise to get raw android control |
 | setDaysUntilPrompt(days: number): AppRaterBase | 11 (android) | Shows review request if `days` days passed since first app launch. |
 | setUsesUntilPrompt(uses: number): AppRaterBase | 11 (android) | Shows review request if users launch more than `uses` times. |
-| setSignificantUsesUntilPrompt(uses: number): AppRaterBase |  | Shows review request if user does significant actions more than `uses`.**iOS only** |
+| setSignificantUsesUntilPrompt(uses: number): AppRaterBase |  | Shows review request if user does significant actions more than `uses`. **iOS only** |
 | incrementSignificantUsageCount(): AppRaterBase |  | For `setSignificantUsesUntilPrompt`, you need to add `incrementSignificantUsageCount`. **iOS only** |
 | setDaysBeforeReminding(days: number): AppRaterBase | 2 (android) | Days until reminder popup if the user chooses rate later, valid for ~iOS10.2 and Android . |
-| setDebugMode(debug: boolean): AppRaterBase | false | Shows review request every time. Default false, ** need to set false when you submit your app.** |
+| setDebugMode(debug: boolean): AppRaterBase | false | Shows review request every time. Default false. **need to set false when you submit your app.** |
 | setShowLaterButton(value: boolean): AppRaterBase | true | Show Later button in review request dialong, valid for ~iOS10.2 and Android. |
 | setShowNeverButton(value: boolean): AppRaterBase | true | Show Never button in review request dialong. **Android only**  |
 | appLaunched():void |  | Let rater know that your app is launched  |

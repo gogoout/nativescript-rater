@@ -9,14 +9,10 @@ function getAppRater(): Promise<hotchemi.android.rate.AppRate> {
         if (_appRater) {
             return resolve(_appRater);
         }
-        else if (application.android.currentContext) {
-            _appRater = hotchemi.android.rate.AppRate.with(application.android.currentContext);
-            return resolve(_appRater)
-        }
         else {
             const onLaunch = () => {
                 application.off(application.launchEvent, onLaunch);
-                _appRater = hotchemi.android.rate.AppRate.with(application.android.currentContext);
+                _appRater = hotchemi.android.rate.AppRate.with(application.android.context);
                 return resolve(_appRater)
             };
 

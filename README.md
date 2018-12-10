@@ -45,7 +45,7 @@ tns plugin add nativescript-rater
 import {appRater} from 'nativescript-rater';
 
 // put init before `application.start`
-// in ng application, you can put init in the constructor of app.module
+// in ng application, you may have to put init before `platformNativeScriptDynamic`
 appRater.init({
 	showNeverButton:false,
 	debugMode:true

@@ -1,3 +1,18 @@
+# [2.0.0](https://github.com/gogoout/nativescript-rater/compare/v1.1.2...v2.0.0) (2018-12-10)
+
+
+### Features
+
+* **init:** Change `appLaunched()` to `init(configs)`. ([fee2ce4](https://github.com/gogoout/nativescript-rater/commit/fee2ce4))
+
+
+### BREAKING CHANGES
+
+* **init:** Change `appLaunched()` to `init(configs)`. Change android from promise to actual
+android control.
+
+
+
 ## [1.1.2](https://github.com/gogoout/nativescript-rater/compare/v1.1.1...v1.1.2) (2018-12-09)
 
 

@@ -1,4 +1,4 @@
-import {AppRaterBase} from './rater.common';
+import {AppRaterBase, AppRaterConfigs, defaultConfigs} from './rater.common';
 import * as application from 'tns-core-modules/application';
 
 let _appRater: hotchemi.android.rate.AppRate;
@@ -23,21 +23,23 @@ function getAppRater(): Promise<hotchemi.android.rate.AppRate> {
 
 export const appRater: AppRaterBase = {
 
-    android: getAppRater(),
-
-    appLaunched() {
+    init(configs?: AppRaterConfigs) {
         getAppRater().then(rater => {
+            const _configs = Object.assign({}, defaultConfigs, configs);
+            appRater.android = rater;
+            rater.setInstallDays(_configs.daysUntilPrompt);
+            rater.setLaunchTimes(_configs.usesUntilPrompt);
+            rater.setRemindInterval(_configs.daysBeforeReminding);
+            rater.setShowLaterButton(_configs.showLaterButton);
+            rater.setShowNeverButton(_configs.showNeverButton);
             rater.monitor();
         });
-        return appRater;
     },
 
-    incrementSignificantUsageCount(): AppRaterBase {
-        return appRater;
+    incrementSignificantUsageCount(): void {
     },
 
     setDaysBeforeReminding(days: number): AppRaterBase {
-        days += 1;
         getAppRater().then(rater => {
             rater.setRemindInterval(days);
         });
@@ -45,7 +47,6 @@ export const appRater: AppRaterBase = {
     },
 
     setDaysUntilPrompt(days: number): AppRaterBase {
-        days += 1;
         getAppRater().then(rater => {
             rater.setInstallDays(days);
         });
@@ -64,25 +65,10 @@ export const appRater: AppRaterBase = {
     },
 
     setUsesUntilPrompt(uses: number): AppRaterBase {
-        uses += 1;
         getAppRater().then(rater => {
             rater.setLaunchTimes(uses);
         });
         return appRater;
-    },
-
-    showRateDialogIfMeetsConditions() {
-        getAppRater().then(rater => {
-            if (rater.isDebug() || rater.shouldShowRateDialog()) {
-                rater.showRateDialog(application.android.currentContext);
-            }
-        });
-    },
-
-    showRateDialog() {
-        getAppRater().then(rater => {
-            rater.showRateDialog(application.android.currentContext);
-        });
     },
 
     setShowLaterButton(value: boolean): AppRaterBase {
@@ -97,6 +83,23 @@ export const appRater: AppRaterBase = {
             rater.setShowNeverButton(value);
         });
         return appRater;
-    }
+    },
+
+    showRateDialogIfMeetsConditions(): boolean {
+        if (_appRater) {
+            const result = _appRater.isDebug() || _appRater.shouldShowRateDialog();
+            if (result) {
+                _appRater.showRateDialog(application.android.currentContext);
+            }
+            return result;
+        }
+        return false;
+    },
+
+    showRateDialog() {
+        if (_appRater) {
+            _appRater.showRateDialog(application.android.currentContext);
+        }
+    },
 };
 

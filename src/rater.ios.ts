@@ -1,4 +1,4 @@
-import {AppRaterBase} from './rater.common';
+import {AppRaterBase, AppRaterConfigs, defaultConfigs} from './rater.common';
 import {topmost} from 'tns-core-modules/ui/frame';
 
 function currentViewController(): any {
@@ -9,13 +9,19 @@ function currentViewController(): any {
 export const appRater: AppRaterBase = {
     ios: SwiftRater,
 
-    appLaunched() {
-        SwiftRater.appLaunched()
+    init(configs?: AppRaterConfigs) {
+        const _configs = Object.assign({}, defaultConfigs, configs);
+        SwiftRater.setDaysUntilPrompt(_configs.daysUntilPrompt);
+        SwiftRater.setUsesUntilPrompt(_configs.usesUntilPrompt);
+        SwiftRater.setDaysBeforeReminding(_configs.daysBeforeReminding);
+        SwiftRater.setSignificantUsesUntilPrompt(_configs.significantUsesUntilPrompt);
+        SwiftRater.setShowLaterButton(_configs.showLaterButton);
+        SwiftRater.setDebugMode(_configs.debugMode);
+        SwiftRater.appLaunched();
     },
 
-    incrementSignificantUsageCount(): AppRaterBase {
+    incrementSignificantUsageCount() {
         SwiftRater.incrementSignificantUsageCount();
-        return appRater;
     },
 
     setDaysBeforeReminding(days: number): AppRaterBase {
@@ -30,7 +36,6 @@ export const appRater: AppRaterBase = {
 
     setDebugMode(debug: boolean): AppRaterBase {
         SwiftRater.setDebugMode(debug);
-        SwiftRater.setShowLog(debug);
         return appRater;
     },
 
@@ -44,14 +49,6 @@ export const appRater: AppRaterBase = {
         return appRater;
     },
 
-    showRateDialogIfMeetsConditions() {
-        SwiftRater.checkWithHost(this.currentViewController);
-    },
-
-    showRateDialog() {
-        SwiftRater.rateApp();
-    },
-
     setShowLaterButton(value: boolean): AppRaterBase {
         SwiftRater.setShowLaterButton(value);
         return appRater;
@@ -59,6 +56,14 @@ export const appRater: AppRaterBase = {
 
     setShowNeverButton(value: boolean): AppRaterBase {
         return appRater;
+    },
+
+    showRateDialogIfMeetsConditions(): boolean {
+        return SwiftRater.checkWithHost(this.currentViewController);
+    },
+
+    showRateDialog() {
+        SwiftRater.rateApp();
     }
 
 };

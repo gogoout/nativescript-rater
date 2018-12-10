@@ -1,5 +1,6 @@
 import * as observable from 'tns-core-modules/data/observable';
 import * as pages from 'tns-core-modules/ui/page';
+import {alert} from 'tns-core-modules/ui/dialogs';
 import {HelloWorldModel} from './main-view-model';
 import {appRater} from 'nativescript-rater';
 
@@ -12,7 +13,10 @@ export function pageLoaded(args: observable.EventData) {
 }
 
 export function onCheck() {
-    appRater.showRateDialogIfMeetsConditions();
+    const result = appRater.showRateDialogIfMeetsConditions();
+    if (!result) {
+        alert('condition not met');
+    }
 }
 
 export function onShow() {

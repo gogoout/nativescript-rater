@@ -59,11 +59,11 @@ export const appRater: AppRaterBase = {
     },
 
     showRateDialogIfMeetsConditions(): boolean {
-        return SwiftRater.checkWithHost(this.currentViewController);
+        return SwiftRater.checkWithHost(currentViewController());
     },
 
     showRateDialog() {
-        SwiftRater.rateApp();
+        SwiftRater.rateAppWithHost(currentViewController());
     }
 
 };

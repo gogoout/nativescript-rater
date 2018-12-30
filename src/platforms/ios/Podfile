@@ -1,1 +1,1 @@
-pod "SwiftRater"
+pod "SwiftRater", "~> 1.4.0"

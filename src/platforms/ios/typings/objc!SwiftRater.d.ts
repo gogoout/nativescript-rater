@@ -11,7 +11,7 @@ declare class SwiftRater extends NSObject {
 
 	static new(): SwiftRater; // inherited from NSObject
 
-	static rateApp(): void;
+	static rateAppWithHost(host: UIViewController): void;
 
 	static reset(): void;
 

@@ -37,7 +37,7 @@ tns plugin add nativescript-rater
 ```
 
 ## Changelog
-[src/CHANGELOG.md](./src/CHANGELOG.md)
+[src/CHANGELOG.md](https://github.com/gogoout/nativescript-rater/blob/master/src/CHANGELOG.md)
 
 ## Usage 
 

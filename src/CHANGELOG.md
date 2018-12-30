@@ -1,3 +1,18 @@
+# [2.1.0](https://github.com/gogoout/nativescript-rater/compare/v2.0.0...v2.1.0) (2018-12-30)
+
+
+### Features
+
+* **ios:** Update pod to 1.4.0 ([17a5e16](https://github.com/gogoout/nativescript-rater/commit/17a5e16))
+
+
+### BREAKING CHANGES
+
+* **ios:** in iOS version, `showRateDialog()` will launch the custom dialog, see
+https://github.com/takecian/SwiftRater/issues/21 for detail.
+
+
+
 # [2.0.0](https://github.com/gogoout/nativescript-rater/compare/v1.1.2...v2.0.0) (2018-12-10)
 
 

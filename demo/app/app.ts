@@ -5,4 +5,4 @@ appRater.init({
     debugMode: true
 });
 
-application.start({ moduleName: "main-page" });
+application.run({ moduleName: "app-root" });

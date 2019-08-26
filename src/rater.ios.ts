@@ -2,8 +2,18 @@ import {AppRaterBase, AppRaterConfigs, defaultConfigs} from './rater.common';
 import {topmost} from 'tns-core-modules/ui/frame';
 
 function currentViewController(): any {
-    const topView = topmost();
-    return (topView.currentPage.modal || topView).viewController;
+    let vc = topmost().ios.controller;
+    let page = null;
+    while (vc.presentedViewController
+        && vc.presentedViewController.viewLoaded) {
+        vc = vc.presentedViewController;
+        if (!vc.beingDismissed) page = vc;
+    }
+    if (page === null) {
+        page = vc;
+    }
+
+    return page;
 }
 
 export const appRater: AppRaterBase = {

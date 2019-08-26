@@ -89,7 +89,7 @@ export const appRater: AppRaterBase = {
         if (_appRater) {
             const result = _appRater.isDebug() || _appRater.shouldShowRateDialog();
             if (result) {
-                _appRater.showRateDialog(application.android.currentContext);
+                _appRater.showRateDialog(application.android.foregroundActivity);
             }
             return result;
         }
@@ -98,7 +98,7 @@ export const appRater: AppRaterBase = {
 
     showRateDialog() {
         if (_appRater) {
-            _appRater.showRateDialog(application.android.currentContext);
+            _appRater.showRateDialog(application.android.foregroundActivity);
         }
     },
 };

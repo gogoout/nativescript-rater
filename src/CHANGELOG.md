@@ -1,3 +1,12 @@
+## [2.1.1](https://github.com/gogoout/nativescript-rater/compare/v2.1.0...v2.1.1) (2019-08-28)
+
+
+### Features
+
+* update to nativescript v6, thanks to [@shiv19](https://github.com/shiv19), close [#1](https://github.com/gogoout/nativescript-rater/issues/1) ([658e9b3](https://github.com/gogoout/nativescript-rater/commit/658e9b3))
+
+
+
 # [2.1.0](https://github.com/gogoout/nativescript-rater/compare/v2.0.0...v2.1.0) (2018-12-30)
 
 

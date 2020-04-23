@@ -1,8 +1,8 @@
 import {AppRaterBase, AppRaterConfigs, defaultConfigs} from './rater.common';
-import {topmost} from 'tns-core-modules/ui/frame';
+import {Frame} from 'tns-core-modules/ui/frame';
 
 function currentViewController(): any {
-    let vc = topmost().ios.controller;
+    let vc = Frame.topmost().ios.controller;
     let page = null;
     while (vc.presentedViewController
         && vc.presentedViewController.viewLoaded) {
